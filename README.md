@@ -6,10 +6,12 @@ This repository contains the admin interface for EVA, built with React, TypeScri
 
 - [x] Scaffolded admin UI components: Dashboard, Login, User Management
 - [x] Updated documentation and quick start guides
+- [x] Added accessibility attributes and best practices to UI components
+- [x] Created UX Accessibility product with comprehensive structure
+- [x] Bump version and update changelog
+- [x] Push all repos to GitHub (or chosen platform)
 - [ ] Validate backend migration in `eva-foundation` and update imports to use shared packages
-- [ ] Consolidate outstanding to-dos and document next steps
-- [ ] Bump version and update changelog
-- [ ] Push all repos to GitHub (or chosen platform)
+- [ ] Deploy demo apps for instant access
 
 ## How to Publish
 1. Review and finalize all code and documentation
