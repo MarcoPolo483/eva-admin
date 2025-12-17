@@ -1,30 +1,9 @@
 {
   "title": "EVA Workspace Structure",
-  "additionalProperties": false,
   "properties": {
-    "repo": {
-      "required": [
-        "name",
-        "pod",
-        "purpose"
-      ],
-      "type": "object",
-      "properties": {
-        "pod": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "purpose": {
-          "type": "string"
-        }
-      }
-    },
     "requiredRootFiles": {
-      "description": "All 5 files must exist at repository root",
       "uniqueItems": true,
-      "type": "array",
+      "description": "All 5 files must exist at repository root",
       "items": {
         "enum": [
           "README.md",
@@ -35,12 +14,35 @@
         ],
         "type": "string"
       },
+      "type": "array",
       "minItems": 5
     },
+    "repo": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "pod": {
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "name",
+        "pod",
+        "purpose"
+      ]
+    },
+    "version": {
+      "description": "Workspace schema version",
+      "const": "v1"
+    },
     "requiredRootFolders": {
-      "description": "All 32 folders must exist at repository root",
       "uniqueItems": true,
-      "type": "array",
+      "description": "All 32 folders must exist at repository root",
       "items": {
         "enum": [
           "audits",
@@ -78,21 +80,19 @@
         ],
         "type": "string"
       },
+      "type": "array",
       "minItems": 32
-    },
-    "version": {
-      "const": "v1",
-      "description": "Workspace schema version"
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://marcopolo483.github.io/eva-suite/schemas/eva-workspace-v1.json",
   "description": "Required root-level folders and files for EVA Suite repositories (generated from .eva-memory.json)",
-  "type": "object",
+  "additionalProperties": false,
   "required": [
     "version",
     "repo",
     "requiredRootFolders",
     "requiredRootFiles"
-  ]
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object"
 }
